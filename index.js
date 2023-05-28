@@ -10,7 +10,7 @@ require("dotenv").config();
 const stripe = require('stripe')(process.env.STRIPE_SK); 
 
 var corsOptions = {
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: ["http://localhost:3000", "http://localhost:5173", "https://earth-tone-project.web.app/"],
     optionsSuccessStatus: 200
 }
 
