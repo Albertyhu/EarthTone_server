@@ -13,7 +13,6 @@ router.post("/create_payment", cors(), async (req, res, next)=>{
     const { order, customer } = req.body;
     try {
         var line_items = order.map(item => {
-            console.log("item: ", item)
             return {
                 quantity: item.quantity, 
                 price_data: {
@@ -34,6 +33,7 @@ router.post("/create_payment", cors(), async (req, res, next)=>{
             mode: "payment",
             success_url: "http://localhost:3000/order_summary",
         });
+        console.log("Order is successful")
         res.status(200).json({ message: "Order is confirmed."});
     } catch (e) {
         console.log("Payment error: ", e.message)
